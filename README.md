@@ -34,4 +34,3 @@ Similarily, we can also `Map` the function to a `chan` with `chans.Map`
 	)
 	// Output: 3 7 11
 ```
-
