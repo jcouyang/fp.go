@@ -7,9 +7,10 @@ import (
 )
 
 type JsonType interface {
-	~float64 | ~string | ~bool | ~map[string]any | ~[]any
+	float64 | string | bool | map[string]any | []any
 }
 
+// Dig a value from a josn byte array by given cursors
 func Cursor[A JsonType](data []byte, cursors ...any) (res A, err error) {
 	var tmp any
 	json.Unmarshal(data, &tmp)
@@ -60,3 +61,4 @@ func Cursor[A JsonType](data []byte, cursors ...any) (res A, err error) {
 	}
 	return
 }
+

@@ -6,6 +6,5 @@ func FlatMap[A any, B any](fn func(a A) (B, error)) func (a A, e error) (B, erro
 			return *new(B), e
 		}
 		return fn(a)
-	}
-	
+	}	
 }

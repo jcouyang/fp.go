@@ -1,7 +1,7 @@
 package tuples
 
-func Map[A any, B any](a A, e error) (func (fn func(a A) B) (B, error)) {
-	return func(fn func(a A) B) (B, error){
+func Map[A any, B any](fn func(a A) B) func (a A, e error) (B, error) {
+	return func(a A, e error) (B, error){
 		if e != nil {
 			return *new(B), e
 		}
