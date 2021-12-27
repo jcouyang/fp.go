@@ -4,6 +4,8 @@ mkShell {
     export PATH=$HOME/go/bin/:$PATH
   '';
   buildInputs = [
+    dhall
+    gh
     (go.overrideAttrs (old: rec {
       version = "1.18beta1";
       src = fetchurl {
