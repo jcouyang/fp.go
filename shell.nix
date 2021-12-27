@@ -6,6 +6,6 @@ mkShell {
   buildInputs = [
     dhall
     gh
-    (callPackage ./go.nix {})
+    (import ./go.nix)
   ];
 }
