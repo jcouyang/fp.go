@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>slices - GoPages</title>
+
+<link type="text/css" rel="stylesheet" href="/lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="/lib/godoc/jquery.js" defer></script>
+
+
+
+
+<script>var goVersion = "go1.18beta1";</script>
+<script src="/lib/godoc/godocs.js" defer></script>
+
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="/pkg/github.com/jcouyang/fizpop/">GoPages | Auto-generated docs</a></div>
+<div class="top-heading" id="heading-narrow"><a href="/pkg/github.com/jcouyang/fizpop/">GoPages</a></div>
+<a href="#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package slices
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/jcouyang/fizpop/slices"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+				<dd><a href="#pkg-examples" class="examplesLink">Examples</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="#Concat">func Concat[A any](a []A, b []A) (c []A)</a></dd>
+			
+				
+				<dd><a href="#Filter">func Filter[A any](fn func(a A) bool) func(a []A) []A</a></dd>
+			
+				
+				<dd><a href="#FlatMap">func FlatMap[A any, B any](fn func(a A) []B) func(a []A) []B</a></dd>
+			
+				
+				<dd><a href="#FlatMapE">func FlatMapE[A any, B any](fn func(a A) ([]B, error)) func(a []A) ([]B, error)</a></dd>
+			
+				
+				<dd><a href="#Flatten">func Flatten[A any](a [][]A) (b []A)</a></dd>
+			
+				
+				<dd><a href="#Foldl">func Foldl[A any, B any](fold func(b B, a A) B, dflt B) func(a []A) B</a></dd>
+			
+				
+				<dd><a href="#Foldr">func Foldr[A any, B any](fold func(a A, b B) B, dflt B) func(a []A) B</a></dd>
+			
+				
+				<dd><a href="#Head">func Head[A any](a []A) (*A, error)</a></dd>
+			
+				
+				<dd><a href="#Map">func Map[A, B any](fn func(a A) B) func(a []A) []B</a></dd>
+			
+				
+				<dd><a href="#MapE">func MapE[A, B any](fn func(a A) (B, error)) func(a []A) ([]B, error)</a></dd>
+			
+				
+				<dd><a href="#Reverse">func Reverse[A any](a []A) (b []A)</a></dd>
+			
+				
+				<dd><a href="#ReverseInline">func ReverseInline[A any](a []A) []A</a></dd>
+			
+				
+				<dd><a href="#Tail">func Tail[A any](a []A) []A</a></dd>
+			
+				
+				<dd><a href="#Take">func Take[A any](n int) func(a []A) []A</a></dd>
+			
+				
+				<dd><a href="#TakeWhile">func TakeWhile[A any](fn func(i A) bool) func(a []A) []A</a></dd>
+			
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+		<div id="pkg-examples">
+			<h3>Examples</h3>
+			<div class="js-expandAll expandAll collapsed">(Expand All)</div>
+			<dl>
+			
+			<dd><a class="exampleLink" href="#example_Concat">Concat</a></dd>
+			
+			<dd><a class="exampleLink" href="#example_Filter">Filter</a></dd>
+			
+			<dd><a class="exampleLink" href="#example_FlatMap">FlatMap</a></dd>
+			
+			<dd><a class="exampleLink" href="#example_Foldl">Foldl</a></dd>
+			
+			<dd><a class="exampleLink" href="#example_Foldr">Foldr</a></dd>
+			
+			<dd><a class="exampleLink" href="#example_Map">Map</a></dd>
+			
+			<dd><a class="exampleLink" href="#example_Reverse">Reverse</a></dd>
+			
+			<dd><a class="exampleLink" href="#example_ReverseInline">ReverseInline</a></dd>
+			
+			</dl>
+		</div>
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="/src/github.com/jcouyang/fizpop/slices/concat.go">concat.go</a>
+			
+				<a href="/src/github.com/jcouyang/fizpop/slices/filter.go">filter.go</a>
+			
+				<a href="/src/github.com/jcouyang/fizpop/slices/flatmap.go">flatmap.go</a>
+			
+				<a href="/src/github.com/jcouyang/fizpop/slices/fold.go">fold.go</a>
+			
+				<a href="/src/github.com/jcouyang/fizpop/slices/head.go">head.go</a>
+			
+				<a href="/src/github.com/jcouyang/fizpop/slices/map.go">map.go</a>
+			
+				<a href="/src/github.com/jcouyang/fizpop/slices/reverse.go">reverse.go</a>
+			
+				<a href="/src/github.com/jcouyang/fizpop/slices/tail.go">tail.go</a>
+			
+				<a href="/src/github.com/jcouyang/fizpop/slices/take.go">take.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+			
+			
+			<h2 id="Concat">func <a href="/src/github.com/jcouyang/fizpop/slices/concat.go#L4">Concat</a>
+				<a class="permalink" href="#Concat">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Concat[A <a href="/pkg/builtin/#any">any</a>](a []<a href="#A">A</a>, b []<a href="#A">A</a>) (c []<a href="#A">A</a>)</pre>
+			<p>
+Concatenation of two slices
+</p>
+
+			<div id="example_Concat" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">fmt.Println(
+    Concat([]string{&#34;cat&#34;, &#34;is&#34;}, []string{&#34;cute&#34;, &#34;!&#34;}),
+)
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">[cat is cute !]
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Filter">func <a href="/src/github.com/jcouyang/fizpop/slices/filter.go#L4">Filter</a>
+				<a class="permalink" href="#Filter">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Filter[A <a href="/pkg/builtin/#any">any</a>](fn func(a <a href="#A">A</a>) <a href="/pkg/builtin/#bool">bool</a>) func(a []<a href="#A">A</a>) []<a href="#A">A</a></pre>
+			<p>
+Returns the slice of those elements that satisfy the predicate
+</p>
+
+			<div id="example_Filter" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">filterOddInt := Filter(integers.Odd[int])
+filterOddUint := Filter(integers.Odd[uint])
+fmt.Println(
+    filterOddInt([]int{-2, -1, 0, 1, 2}),
+    filterOddUint([]uint{1, 2, 3, 4, 5}),
+)
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">[-1 1] [1 3 5]
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="FlatMap">func <a href="/src/github.com/jcouyang/fizpop/slices/flatmap.go#L16">FlatMap</a>
+				<a class="permalink" href="#FlatMap">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FlatMap[A <a href="/pkg/builtin/#any">any</a>, B <a href="/pkg/builtin/#any">any</a>](fn func(a <a href="#A">A</a>) []<a href="#B">B</a>) func(a []<a href="#A">A</a>) []<a href="#B">B</a></pre>
+			<p>
+Map a function over all the elements of a slice and concatenate the resulting slice
+</p>
+
+			<div id="example_FlatMap" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">splitWords := func(w string) []string {
+    return strings.Split(w, &#34; &#34;)
+}
+fmt.Println(strings.Join(
+    FlatMap(splitWords)([]string{&#34;hello world&#34;, &#34;this is meowesome&#34;}),
+    &#34;,&#34;))
+
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">hello,world,this,is,meowesome
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="FlatMapE">func <a href="/src/github.com/jcouyang/fizpop/slices/flatmap.go#L21">FlatMapE</a>
+				<a class="permalink" href="#FlatMapE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FlatMapE[A <a href="/pkg/builtin/#any">any</a>, B <a href="/pkg/builtin/#any">any</a>](fn func(a <a href="#A">A</a>) ([]<a href="#B">B</a>, <a href="/pkg/builtin/#error">error</a>)) func(a []<a href="#A">A</a>) ([]<a href="#B">B</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Map a function over all the elements of a slice and concatenate the resulting slice
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Flatten">func <a href="/src/github.com/jcouyang/fizpop/slices/flatmap.go#L6">Flatten</a>
+				<a class="permalink" href="#Flatten">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Flatten[A <a href="/pkg/builtin/#any">any</a>](a [][]<a href="#A">A</a>) (b []<a href="#A">A</a>)</pre>
+			<p>
+Flatten a nested slice
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Foldl">func <a href="/src/github.com/jcouyang/fizpop/slices/fold.go#L4">Foldl</a>
+				<a class="permalink" href="#Foldl">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Foldl[A <a href="/pkg/builtin/#any">any</a>, B <a href="/pkg/builtin/#any">any</a>](fold func(b <a href="#B">B</a>, a <a href="#A">A</a>) <a href="#B">B</a>, dflt <a href="#B">B</a>) func(a []<a href="#A">A</a>) <a href="#B">B</a></pre>
+			<p>
+Fold a slice from left
+</p>
+
+			<div id="example_Foldl" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">sum := Foldl(func(b int, a int) int {
+    return b + a
+}, 0)
+
+<span class="comment">// (((1 + 2) + 3) + 4) + 5</span>
+fmt.Println(sum([]int{1, 2, 3, 4, 5}))
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">15
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Foldr">func <a href="/src/github.com/jcouyang/fizpop/slices/fold.go#L18">Foldr</a>
+				<a class="permalink" href="#Foldr">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Foldr[A <a href="/pkg/builtin/#any">any</a>, B <a href="/pkg/builtin/#any">any</a>](fold func(a <a href="#A">A</a>, b <a href="#B">B</a>) <a href="#B">B</a>, dflt <a href="#B">B</a>) func(a []<a href="#A">A</a>) <a href="#B">B</a></pre>
+			<p>
+Fold a slice from right
+</p>
+
+			<div id="example_Foldr" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">foldSub := Foldr(func(a int, b int) int {
+    return a - b
+}, 0)
+
+<span class="comment">// 1 - (2 - (3 - (4 - (5 - 0))))</span>
+fmt.Println(foldSub([]int{1, 2, 3, 4, 5}))
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">3
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Head">func <a href="/src/github.com/jcouyang/fizpop/slices/head.go#L6">Head</a>
+				<a class="permalink" href="#Head">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Head[A <a href="/pkg/builtin/#any">any</a>](a []<a href="#A">A</a>) (*<a href="#A">A</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Get the pointer of the first element of a slice, error when empty.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Map">func <a href="/src/github.com/jcouyang/fizpop/slices/map.go#L4">Map</a>
+				<a class="permalink" href="#Map">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Map[A, B <a href="/pkg/builtin/#any">any</a>](fn func(a <a href="#A">A</a>) <a href="#B">B</a>) func(a []<a href="#A">A</a>) []<a href="#B">B</a></pre>
+			<p>
+Apply a function to each element of slice
+</p>
+
+			<div id="example_Map" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">strLen := func(a1 string) int {
+    return len(a1)
+}
+fmt.Println(
+    Map(strLen)([]string{&#34;cat&#34;, &#34;dog&#34;}),
+)
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">[3 3]
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="MapE">func <a href="/src/github.com/jcouyang/fizpop/slices/map.go#L15">MapE</a>
+				<a class="permalink" href="#MapE">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func MapE[A, B <a href="/pkg/builtin/#any">any</a>](fn func(a <a href="#A">A</a>) (<a href="#B">B</a>, <a href="/pkg/builtin/#error">error</a>)) func(a []<a href="#A">A</a>) ([]<a href="#B">B</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Apply an effectful function to each element of slice, return when error happen
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Reverse">func <a href="/src/github.com/jcouyang/fizpop/slices/reverse.go#L3">Reverse</a>
+				<a class="permalink" href="#Reverse">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Reverse[A <a href="/pkg/builtin/#any">any</a>](a []<a href="#A">A</a>) (b []<a href="#A">A</a>)</pre>
+			
+			<div id="example_Reverse" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">a := []int{1, 2, 3, 4, 5}
+fmt.Println(
+    Reverse(a), a,
+)
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">[5 4 3 2 1] [1 2 3 4 5]
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="ReverseInline">func <a href="/src/github.com/jcouyang/fizpop/slices/reverse.go#L11">ReverseInline</a>
+				<a class="permalink" href="#ReverseInline">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ReverseInline[A <a href="/pkg/builtin/#any">any</a>](a []<a href="#A">A</a>) []<a href="#A">A</a></pre>
+			
+			<div id="example_ReverseInline" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">a := []int{1, 2, 3, 4, 5}
+fmt.Println(
+    ReverseInline(a), a,
+)
+<span class="comment"></pre>
+			
+			<p>Output:</p>
+			<pre class="output">[5 4 3 2 1] [5 4 3 2 1]
+</pre>
+			
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Tail">func <a href="/src/github.com/jcouyang/fizpop/slices/tail.go#L4">Tail</a>
+				<a class="permalink" href="#Tail">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Tail[A <a href="/pkg/builtin/#any">any</a>](a []<a href="#A">A</a>) []<a href="#A">A</a></pre>
+			<p>
+Extract the elements after the head of a slice. Tail of empty slice is still empty slice
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Take">func <a href="/src/github.com/jcouyang/fizpop/slices/take.go#L4">Take</a>
+				<a class="permalink" href="#Take">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Take[A <a href="/pkg/builtin/#any">any</a>](n <a href="/pkg/builtin/#int">int</a>) func(a []<a href="#A">A</a>) []<a href="#A">A</a></pre>
+			<p>
+Take first n elements of a slice. if len(a) &lt; n return len(a) elements
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TakeWhile">func <a href="/src/github.com/jcouyang/fizpop/slices/take.go#L15">TakeWhile</a>
+				<a class="permalink" href="#TakeWhile">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func TakeWhile[A <a href="/pkg/builtin/#any">any</a>](fn func(i <a href="#A">A</a>) <a href="/pkg/builtin/#bool">bool</a>) func(a []<a href="#A">A</a>) []<a href="#A">A</a></pre>
+			<p>
+Take the longest prefix (possibly empty) of elements that satisfy fn:
+</p>
+
+			
+			
+
+		
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.18beta1.<br>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>

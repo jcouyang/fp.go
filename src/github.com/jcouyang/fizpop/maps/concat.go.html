@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#375EAB"/>
+
+  <title>src/github.com/jcouyang/fizpop/maps/concat.go - GoPages</title>
+
+<link type="text/css" rel="stylesheet" href="/lib/godoc/style.css"/>
+
+<script>window.initFuncs = [];</script>
+<script src="/lib/godoc/jquery.js" defer=""></script>
+
+
+
+
+<script>var goVersion = "go1.18beta1";</script>
+<script src="/lib/godoc/godocs.js" defer=""></script>
+
+</head>
+<body>
+
+<div id="lowframe" style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="/pkg/github.com/jcouyang/fizpop/">GoPages | Auto-generated docs</a></div>
+<div class="top-heading" id="heading-narrow"><a href="/pkg/github.com/jcouyang/fizpop/">GoPages</a></div>
+<a href="#" id="menu-button"><span id="menu-button-arrow">▽</span></a>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Source file
+    <a href="/src">src</a>/<a href="/src/github.com">github.com</a>/<a href="/src/github.com/jcouyang">jcouyang</a>/<a href="/src/github.com/jcouyang/fizpop">fizpop</a>/<a href="/src/github.com/jcouyang/fizpop/maps">maps</a>/<span class="text-muted">concat.go</span>
+  </h1>
+
+
+
+
+
+  <h2>
+    Documentation: <a href="/pkg/github.com/jcouyang/fizpop/maps">github.com/jcouyang/fizpop/maps</a>
+  </h2>
+
+
+
+<div id="nav"></div>
+
+
+<script type="text/javascript">document.ANALYSIS_DATA = null;</script>
+<pre><span id="L1" class="ln">     1  </span>package maps
+<span id="L2" class="ln">     2  </span>
+<span id="L3" class="ln">     3  </span><span class="comment">// Concatenation of two maps, if any key duplicated, returns the value of the later map</span>
+<span id="L4" class="ln">     4  </span>func Concat[K comparable, V any](a map[K]V, b map[K]V) (c map[K]V) {
+<span id="L5" class="ln">     5  </span>	c = make(map[K]V, len(a) + len(b))
+<span id="L6" class="ln">     6  </span>	for k1,v1 := range a {
+<span id="L7" class="ln">     7  </span>		c[k1] = v1
+<span id="L8" class="ln">     8  </span>	}
+<span id="L9" class="ln">     9  </span>	for k2,v2 := range b {
+<span id="L10" class="ln">    10  </span>		c[k2] = v2
+<span id="L11" class="ln">    11  </span>	}
+<span id="L12" class="ln">    12  </span>	return
+<span id="L13" class="ln">    13  </span>}
+<span id="L14" class="ln">    14  </span>
+</pre><p></p>
+
+<div id="footer">
+Build version go1.18beta1.<br/>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+
+</body></html>
