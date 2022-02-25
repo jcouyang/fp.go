@@ -2,7 +2,7 @@ package slices
 
 import (
 	"fmt"
-	"github.com/jcouyang/fizpop/integers"
+	"oyanglul.us/fizpop/integers"
 )
 
 func ExampleFilter() {
