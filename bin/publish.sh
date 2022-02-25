@@ -6,4 +6,4 @@ echo publishing $VERSION...
 
 gh release create "$VERSION"
 
-GOPROXY=proxy.golang.org go list -m "github.com/jcouyang/fizpop@$VERSION"
+GOPROXY=proxy.golang.org go list -m "oyanglul.us/fizpop@$VERSION"
