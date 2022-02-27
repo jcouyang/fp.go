@@ -8,7 +8,7 @@ All functions are group by the data type they are processing, for
 example we can `slices.Map` a function to a slice
 
 ```go
-import "github.com/jcouyang/fizpop/slices"
+import "oyanglul.us/fizpop/slices"
 
 strLen := func (a1 string) int {
 	return len(a1)
@@ -23,7 +23,7 @@ fmt.Println(
 Similarily, we can also `Map` the function to a `chan` with `chans.Map`
 
 ```go
-import "github.com/jcouyang/fizpop/chans"
+import "oyanglul.us/fizpop/chans"
 
 wordChan := make(chan string, 3)
 wordLenChan := chans.Map(strLen)(wordChan)
