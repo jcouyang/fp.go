@@ -3,7 +3,7 @@ package chans
 import (
 	"fmt"
 	"time"
-	"oyanglul.us/fizpop"
+	"oyanglul.us/fp.go"
 )
 
 func ExampleFilter() {

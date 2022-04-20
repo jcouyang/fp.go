@@ -1,6 +1,6 @@
 package slices
 
-import ("oyanglul.us/fizpop")
+import ("oyanglul.us/fp.go")
 
 // Flatten a nested slice
 func Flatten[A any](a [][]A) (b[]A) {

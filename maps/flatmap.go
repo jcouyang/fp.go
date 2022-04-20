@@ -1,6 +1,6 @@
 package maps
 import (
-	"oyanglul.us/fizpop"
+	"oyanglul.us/fp.go"
 )
 
 // Flatten a nested map

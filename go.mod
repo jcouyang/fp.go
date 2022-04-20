@@ -1,4 +1,4 @@
-module oyanglul.us/fizpop
+module oyanglul.us/fp.go
 
 go 1.18
 
