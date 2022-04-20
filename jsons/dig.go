@@ -11,7 +11,7 @@ type JsonType interface {
 }
 
 // Dig a value from a josn byte array by given cursors
-func Cursor[A JsonType](data []byte, cursors ...any) (res A, err error) {
+func Dig[A JsonType](data []byte, cursors ...any) (res A, err error) {
 	var tmp any
 	json.Unmarshal(data, &tmp)
 	length := len(cursors)
