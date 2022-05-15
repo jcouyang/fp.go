@@ -2,8 +2,8 @@ package chans
 
 import (
 	"fmt"
-	"time"
 	"oyanglul.us/fp.go"
+	"time"
 )
 
 func ExampleFilter() {

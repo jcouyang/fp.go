@@ -6,7 +6,7 @@ import (
 )
 
 func ExampleFlatMap() {
-	splitWords := func (w string) []string{
+	splitWords := func(w string) []string {
 		return strings.Split(w, " ")
 	}
 	fmt.Println(strings.Join(

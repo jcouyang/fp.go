@@ -6,7 +6,7 @@ import (
 
 func ExampleFlatMap() {
 	proc1 := func(input string) (string, error) {
-		if len(input) > 0{
+		if len(input) > 0 {
 			return input, nil
 		}
 		return "", fmt.Errorf("error from proc1")

@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"time"
 )
+
 func strLen(a1 string) int {
-		return len(a1)
-	}
+	return len(a1)
+}
 func ExampleMap() {
 
 	// Sized channel
@@ -16,7 +17,7 @@ func ExampleMap() {
 	wordChan <- "cat"
 	wordChan <- "catfish"
 	wordChan <- "caterpillar"
-	
+
 	fmt.Println(
 		<-wordLenChan,
 		<-wordLenChan,
@@ -25,16 +26,16 @@ func ExampleMap() {
 
 	// Ping pong
 	ping := make(chan string)
-	pong := Map(func(i string) string {return "pong"})(ping)
+	pong := Map(func(i string) string { return "pong" })(ping)
 
-	go func(){
-		for i:=0;i<10;i++ {
+	go func() {
+		for i := 0; i < 10; i++ {
 			ping <- "ping"
 		}
 	}()
 
 	go func() {
-		for i:=0;i<10;i++ {
+		for i := 0; i < 10; i++ {
 			fmt.Println(<-pong)
 		}
 	}()

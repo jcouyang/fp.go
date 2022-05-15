@@ -5,9 +5,9 @@ import (
 )
 
 func ExampleMap() {
-	strLen := func (a1 string) int {
-			return len(a1)
-		}
+	strLen := func(a1 string) int {
+		return len(a1)
+	}
 	fmt.Println(
 		Map(strLen)([]string{"cat", "dog"}),
 	)

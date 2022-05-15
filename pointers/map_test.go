@@ -1,8 +1,9 @@
 package pointers
+
 import "fmt"
 
 func ExampleMap() {
-	type Vector struct{
+	type Vector struct {
 		x int
 		y int
 	}
@@ -24,5 +25,5 @@ func ExampleMap() {
 	fmt.Println(tryPlusYBy1(nil))
 	// Output: &{0 0} &{0 1}
 	// &{0 1} &{0 1} &{0 1}
-	// <nil>	
+	// <nil>
 }

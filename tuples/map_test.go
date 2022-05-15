@@ -9,7 +9,7 @@ func proc(good string) (string, error) {
 	return "", fmt.Errorf("error proc1")
 }
 func strLen(input string) int {
-		return len(input)
+	return len(input)
 }
 
 func strLen2(i1 string, i2 string) int {

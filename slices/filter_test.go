@@ -10,7 +10,7 @@ func ExampleFilter() {
 	filterOddUint := Filter(integers.Odd[uint])
 	fmt.Println(
 		filterOddInt([]int{-2, -1, 0, 1, 2}),
-		filterOddUint([]uint{1,2,3,4,5}),
+		filterOddUint([]uint{1, 2, 3, 4, 5}),
 	)
 	// Output: [-1 1] [1 3 5]
 }

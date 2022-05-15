@@ -38,4 +38,4 @@ func Second[A, B, C any](fn func(a A) B) func(c C, a A) (C, B) {
 	}
 }
 
-func Identity[A any](a A) A { return a}
+func Identity[A any](a A) A { return a }

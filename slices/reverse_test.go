@@ -3,7 +3,7 @@ package slices
 import "fmt"
 
 func ExampleReverse() {
-	a := []int{1,2,3,4,5}
+	a := []int{1, 2, 3, 4, 5}
 	fmt.Println(
 		Reverse(a), a,
 	)
@@ -11,7 +11,7 @@ func ExampleReverse() {
 }
 
 func ExampleReverseInline() {
-	a := []int{1,2,3,4,5}
+	a := []int{1, 2, 3, 4, 5}
 	fmt.Println(
 		ReverseInline(a), a,
 	)
