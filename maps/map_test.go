@@ -4,11 +4,11 @@ import "fmt"
 
 func ExampleMap() {
 	animalList := map[string]int{
-		"cat": 1,
-		"dog": 2,
+		"cat":  1,
+		"dog":  2,
 		"fish": 3,
 	}
-	eachPlus1 := Map(func(_ string, v int) int {return v+1})
+	eachPlus1 := Map(func(_ string, v int) int { return v + 1 })
 	fmt.Println(
 		eachPlus1(animalList),
 	)
