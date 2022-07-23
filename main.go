@@ -37,5 +37,17 @@ func Second[A, B, C any](fn func(a A) B) func(c C, a A) (C, B) {
 		return c, fn(a)
 	}
 }
+// ***
+func Split[A, AA, B, BB any](fn1 func(a A) B, fn2 func(a AA) BB) func (a A, aa AA) (b B, bb BB) {
+	return func(a A, aa AA) (b B, bb BB) {
+		return fn1(a), fn2(aa)
+	}
+}
+// &&&
+func Fanout[A, B, BB any](fn1 func(a A) B, fn2 func(a A) BB) func (a A) (b B, bb BB) {
+	return 	func(a A) (b B, bb BB) {
+		return fn1(a), fn2(a)
+	}
+}
 
 func Identity[A any](a A) A { return a }
