@@ -33,8 +33,8 @@ func Pipe7[A, B, C, D, E, F, G, H any](fnA func(a A) (B, error), fnB func(a B) (
 }
 
 // |||
-func Fanin[A, B any](fn1 func(a A) B, fn2 func(err error) B) func (a A, err error) B {
-	return func (a A, err error) B {
+func Fanin[A, B any](fn1 func(a A) B, fn2 func(err error) B) func(a A, err error) B {
+	return func(a A, err error) B {
 		if err != nil {
 			return fn2(err)
 		}
@@ -42,6 +42,6 @@ func Fanin[A, B any](fn1 func(a A) B, fn2 func(err error) B) func (a A, err erro
 	}
 }
 
-func Catch[A, B any](catch func(err error) A) func (a A, err error) A {
+func Catch[A, B any](catch func(err error) A) func(a A, err error) A {
 	return Fanin(fp.Identity[A], catch)
 }
