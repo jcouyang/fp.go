@@ -30,6 +30,27 @@ func Fanout[A, B, BB any](fn1 func(a A) B, fn2 func(a A) BB) func(a A) (b B, bb 
 	}
 }
 
+func Left[A, B, C any](fn func(a A) B) func (a A, c C) (B, C) {
+	return func (a A, c C) (B, C) {
+		return fn(a), c
+	}
+}
+
+func Right[A, B, C any](fn func(a A) B) func (c C, a A) (C, B) {
+	return func (c C, a A) (C, B) {
+		return c, fn(a)
+	}
+}
+
+func Fanin[A, C any](fn1 func(a A) C, fn2 func(err error) C) func (a A, err error) C {
+	return func (a A, err error) C {
+		if err != nil {
+			return fn2(err)
+		}
+		return fn1(a)
+	}
+}
+
 func Compose[A any, B any, C any](fn1 func(b B) C, fn2 func(a A) B) func(a A) C {
 	return func(a A) C {
 		return fn1(fn2(a))
