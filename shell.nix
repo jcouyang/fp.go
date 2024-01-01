@@ -6,6 +6,6 @@ mkShell {
   buildInputs = [
     dhall
     gh
-    go_1_18
+    go
   ];
 }

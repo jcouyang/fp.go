@@ -1,6 +1,6 @@
 package tuples
 
-import "oyanglul.us/fp.go"
+import "github.com/jcouyang/fp.go"
 
 func Compose[A, B, C any](fnB func(a B) (C, error), fnA func(a A) (B, error)) func(a A) (C, error) {
 	return func(a A) (C, error) {

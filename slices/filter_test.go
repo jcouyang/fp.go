@@ -2,7 +2,7 @@ package slices
 
 import (
 	"fmt"
-	"oyanglul.us/fp.go/integers"
+	"github.com/jcouyang/fp.go/integers"
 )
 
 func ExampleFilter() {

@@ -1,7 +1,7 @@
 package maps
 
 import (
-	"oyanglul.us/fp.go/arrow"
+	"github.com/jcouyang/fp.go/arrow"
 )
 
 // Flatten a nested map

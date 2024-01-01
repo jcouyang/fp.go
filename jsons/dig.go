@@ -3,7 +3,7 @@ package jsons
 import (
 	"encoding/json"
 
-	"oyanglul.us/fp.go/maps"
+	"github.com/jcouyang/fp.go/maps"
 )
 
 type JsonType interface {

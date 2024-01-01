@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"oyanglul.us/fp.go"
+	"github.com/jcouyang/fp.go"
 )
 
 func handleErrorIfAny(err error) error {

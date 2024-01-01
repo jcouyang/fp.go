@@ -2,7 +2,7 @@ package chans
 
 import (
 	"fmt"
-	"oyanglul.us/fp.go"
+	"github.com/jcouyang/fp.go"
 	"time"
 )
 

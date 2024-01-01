@@ -1,6 +1,6 @@
 package tuples
 
-import "oyanglul.us/fp.go"
+import "github.com/jcouyang/fp.go"
 
 func Alt[A any](a A, err error) func(b A, err error) (A, error) {
 	if err != nil {
